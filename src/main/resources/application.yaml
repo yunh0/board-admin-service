@@ -6,6 +6,7 @@ logging:
     org.yunho.boardadminservice: debug
     org.springframework.web.servlet: debug
     org.hibernate.type.descriptor.sql.BasicBinder: trace
+    org.springframework.web.client.RestTemplate: debug
 
 spring:
   devtools:
@@ -49,6 +50,8 @@ spring:
             user-name-attribute: id
 server:
   port: 8081
+
+project.board.url: http://localhost:8080
 ---
 
 spring:
