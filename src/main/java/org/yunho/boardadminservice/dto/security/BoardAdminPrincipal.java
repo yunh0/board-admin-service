@@ -5,7 +5,7 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.yunho.boardadminservice.constant.RoleType;
-import org.yunho.boardadminservice.dto.UserAccountDto;
+import org.yunho.boardadminservice.dto.AdminAccountDto;
 
 import java.util.Collection;
 import java.util.Map;
@@ -42,7 +42,7 @@ public record BoardAdminPrincipal(
         );
     }
 
-    public static BoardAdminPrincipal from(UserAccountDto dto) {
+    public static BoardAdminPrincipal from(AdminAccountDto dto) {
         return BoardAdminPrincipal.of(
                 dto.userId(),
                 dto.userPassword(),
@@ -53,8 +53,8 @@ public record BoardAdminPrincipal(
         );
     }
 
-    public UserAccountDto toDto() {
-        return UserAccountDto.of(
+    public AdminAccountDto toDto() {
+        return AdminAccountDto.of(
                 username,
                 password,
                 authorities.stream()
