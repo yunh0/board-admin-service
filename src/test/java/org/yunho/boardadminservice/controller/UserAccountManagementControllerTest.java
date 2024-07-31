@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Import;
 import org.springframework.http.MediaType;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
+import org.yunho.boardadminservice.config.GlobalControllerConfig;
 import org.yunho.boardadminservice.config.TestSecurityConfig;
 import org.yunho.boardadminservice.dto.UserAccountDto;
 import org.yunho.boardadminservice.service.UserAccountManagementService;
@@ -22,7 +23,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @DisplayName("컨트롤러 - 회원 관리")
-@Import(TestSecurityConfig.class)
+@Import({TestSecurityConfig.class, GlobalControllerConfig.class})
 @WebMvcTest(UserAccountManagementController.class)
 class UserAccountManagementControllerTest {
 

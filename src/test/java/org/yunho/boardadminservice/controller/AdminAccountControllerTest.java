@@ -10,6 +10,7 @@ import org.springframework.http.MediaType;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.context.event.annotation.BeforeTestMethod;
 import org.springframework.test.web.servlet.MockMvc;
+import org.yunho.boardadminservice.config.GlobalControllerConfig;
 import org.yunho.boardadminservice.config.SecurityConfig;
 import org.yunho.boardadminservice.constant.RoleType;
 import org.yunho.boardadminservice.dto.AdminAccountDto;
@@ -26,7 +27,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @DisplayName("컨트롤러 - 어드민 회원")
-@Import(SecurityConfig.class)
+@Import({SecurityConfig.class, GlobalControllerConfig.class})
 @WebMvcTest(AdminAccountController.class)
 class AdminAccountControllerTest {
 
