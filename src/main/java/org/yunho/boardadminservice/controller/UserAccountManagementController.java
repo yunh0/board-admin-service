@@ -20,7 +20,7 @@ public class UserAccountManagementController {
             HttpServletRequest request
     ) {
         model.addAttribute("currentUri", request.getRequestURI());
-        return "management/userAccounts";
+        return "management/user-accounts";
     }
 
 }
