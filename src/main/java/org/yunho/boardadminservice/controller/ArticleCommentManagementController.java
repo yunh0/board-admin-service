@@ -20,7 +20,7 @@ public class ArticleCommentManagementController {
             HttpServletRequest request
     ) {
         model.addAttribute("currentUri", request.getRequestURI());
-        return "management/articleComments";
+        return "management/article-comments";
     }
 
 }
